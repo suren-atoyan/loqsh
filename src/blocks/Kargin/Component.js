@@ -6,7 +6,7 @@ import { getRandomKargin } from '../../utils';
 import { messages } from '../../config';
 
 function Kargin() {
-  const [randomKarginUrl, setRandomKarginUrl] = useState(getRandomKargin());
+  const [randomKarginUrl, setRandomKarginUrl] = useState(() => getRandomKargin());
 
   function setRandomKargin() {
     setRandomKarginUrl(getRandomKargin());

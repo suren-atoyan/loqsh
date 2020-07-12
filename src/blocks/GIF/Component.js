@@ -3,19 +3,11 @@ import React, { useState, useEffect } from 'react';
 import { Video, Button, ButtonGroup } from '@urban-bot/core';
 
 import Loading from '../../components/Loading';
-import { getRandomGIF } from '../../utils';
+import useRandomGif from '../../hooks/useRandomGif';
 import { messages } from '../../config';
 
 function GIF() {
-  const [gif, setGif] = useState(null);
-
-  useEffect(() => {
-    setRandomGIF();
-  }, []);
-
-  function setRandomGIF() {
-    getRandomGIF().then(gif => setGif(gif));
-  }
+  const [gif, getGif] = useRandomGif(null);
 
   return gif
     ? (
@@ -28,7 +20,7 @@ function GIF() {
           isNewMessageEveryRender={false}
           title={messages.more}
         >
-          <Button onClick={setRandomGIF}>{messages.oneMore}</Button>
+          <Button onClick={getGif}>{messages.oneMore}</Button>
         </ButtonGroup>
       </>
     ) : <Loading />;

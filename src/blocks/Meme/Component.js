@@ -3,20 +3,12 @@ import React, { useState, useEffect } from 'react';
 import { Image, Button, ButtonGroup } from '@urban-bot/core';
 
 import Loading from '../../components/Loading';
-import { getRandomMemes } from '../../utils';
+import useRandomMemes from '../../hooks/useRandomMemes';
 import { messages } from '../../config';
 
 function Meme() {
-  const [memes, setMemes] = useState(null);
+  const memes = useRandomMemes(null);
   const [currentIndex, setIndex] = useState(0);
-
-  useEffect(() => {
-    setRandomMeme();
-  }, []);
-
-  function setRandomMeme() {
-    getRandomMemes().then(memes => setMemes(memes.data));
-  }
 
   function next() {
     // it's not possible to disable buttons 🙁
