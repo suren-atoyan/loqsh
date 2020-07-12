@@ -1,5 +1,4 @@
-![](https://i.ibb.co/6PWkWbd/js.png)
-# Urban Bot Starter
+# Loqsh-bot
 
 Develop chatbots with zero configuration using javascript. If you want to use typescript use [ts starter](https://github.com/urban-bot/urban-bot-starter-typescript).
 
