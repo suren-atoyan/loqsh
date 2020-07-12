@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { Text, Image, Button, ButtonGroup } from '@urban-bot/core';
+import { Image, Button, ButtonGroup } from '@urban-bot/core';
 
 import Loading from '../../components/Loading';
 import { getRandomMemes } from '../../utils';

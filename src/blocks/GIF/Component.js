@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { Text, Video, Button, ButtonGroup } from '@urban-bot/core';
+import { Video, Button, ButtonGroup } from '@urban-bot/core';
 
 import Loading from '../../components/Loading';
 import { getRandomGIF } from '../../utils';
