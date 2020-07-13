@@ -17,6 +17,7 @@ function GIF() {
           file={gif.data.image_mp4_url}
         />
         <ButtonGroup
+          disableNotification
           isNewMessageEveryRender={false}
           title={messages.more}
         >

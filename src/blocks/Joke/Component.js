@@ -16,6 +16,7 @@ function Joke() {
           {jokeData.joke}
         </Text>
         <ButtonGroup
+          disableNotification
           isNewMessageEveryRender={false}
           title={messages.more}
         >

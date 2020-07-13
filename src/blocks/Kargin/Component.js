@@ -14,12 +14,11 @@ function Kargin() {
 
   return (
     <>
-      <Text
-        isNewMessageEveryRender={false}
-      >
+      <Text isNewMessageEveryRender={false}>
         {randomKarginUrl}
       </Text>
       <ButtonGroup
+        disableNotification
         isNewMessageEveryRender={false}
         title={messages.more}
       >

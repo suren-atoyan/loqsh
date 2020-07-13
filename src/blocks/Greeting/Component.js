@@ -16,6 +16,7 @@ function Greeting() {
     <>
       <Text>{pickRandom(messages.greetings)} {greetingEmoji}</Text>
       <ButtonGroup
+        disableNotification
         isReplyButtons
         isResizedKeyboard
         title={messages.whatsup}

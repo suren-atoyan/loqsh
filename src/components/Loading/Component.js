@@ -6,7 +6,7 @@ import { messages } from 'config';
 
 function Loading({ message = messages.waiting }) {
   return (
-    <Text>{message}</Text>
+    <Text disableNotification>{message}</Text>
   );
 }
 

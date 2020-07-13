@@ -30,6 +30,7 @@ function Meme() {
           file={memes[currentIndex].link}
         />
         <ButtonGroup
+          disableNotification
           isNewMessageEveryRender={false}
           title={messages.more}
         >
