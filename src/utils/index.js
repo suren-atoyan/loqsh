@@ -34,7 +34,6 @@ const makeCancelable = promise => {
   let _reject = null;
   let _hasCanceled = false;
 
-
   const wrappedPromise = new Promise((resolve, reject) => {
     _hasCanceled && fireReject(reject);
     _reject = reject;
@@ -45,7 +44,7 @@ const makeCancelable = promise => {
 
   wrappedPromise.cancel = () => {
     _hasCanceled = true;
-    reject && fireReject(reject);
+    _reject && fireReject(_reject);
   };
 
   return wrappedPromise;
