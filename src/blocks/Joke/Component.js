@@ -12,7 +12,7 @@ function Joke() {
   return jokeData
     ? (
       <>
-        <Text isNewMessageEveryRender={true}>
+        <Text isNewMessageEveryRender={false}>
           {jokeData.joke}
         </Text>
         <ButtonGroup
