@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 import { UrbanBotTelegram } from '@urban-bot/telegram';
 import { render, Root } from '@urban-bot/core';
 
-import App from '../App';
+import App from 'App';
 
 dotenv.config();
 

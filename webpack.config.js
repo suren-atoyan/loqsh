@@ -36,6 +36,7 @@ module.exports = (env, argv) => ({
   },
   target: 'node',
   resolve: {
+    modules: [path.join(__dirname, 'src'), 'node_modules'],
     extensions: ['.js', '.jsx', '.json'],
   },
 });

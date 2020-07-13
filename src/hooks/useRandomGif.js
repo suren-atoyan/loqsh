@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
-import useCancelable from './useCancelable';
-import { getRandomGif } from '../utils';
+import useCancelable from 'hooks/useCancelable';
+import { getRandomGif } from 'utils';
 
 function useRandomGif(initial) {
   const [gif, setGif] = useState(initial);

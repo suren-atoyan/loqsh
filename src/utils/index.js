@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
 import dotenv from 'dotenv';
 
-import { kargin } from '../config';
+import { kargin } from 'config';
 
 dotenv.config();
 

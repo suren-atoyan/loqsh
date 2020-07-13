@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 
 import { Text, Button, ButtonGroup } from '@urban-bot/core';
 
-import Loading from '../../components/Loading';
-import useRandomJoke from '../../hooks/useRandomJoke';
-import { messages } from '../../config';
+import Loading from 'components/Loading';
+import useRandomJoke from 'hooks/useRandomJoke';
+import { messages } from 'config';
 
 function Joke() {
   const [jokeData, getJoke] = useRandomJoke(null);
@@ -12,7 +12,7 @@ function Joke() {
   return jokeData
     ? (
       <>
-        <Text isNewMessageEveryRender={false}>
+        <Text isNewMessageEveryRender={true}>
           {jokeData.joke}
         </Text>
         <ButtonGroup

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
-import useCancelable from './useCancelable';
-import { getRandomJoke } from '../utils';
+import useCancelable from 'hooks/useCancelable';
+import { getRandomJoke } from 'utils';
 
 function useRandomJoke(initial) {
   const [joke, setJoke] = useState(initial);

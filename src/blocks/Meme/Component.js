@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 
 import { Image, Button, ButtonGroup } from '@urban-bot/core';
 
-import Loading from '../../components/Loading';
-import useRandomMemes from '../../hooks/useRandomMemes';
-import { messages } from '../../config';
+import Loading from 'components/Loading';
+import useRandomMemes from 'hooks/useRandomMemes';
+import { messages } from 'config';
 
 function Meme() {
   const memes = useRandomMemes(null);

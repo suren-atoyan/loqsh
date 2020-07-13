@@ -1,11 +1,11 @@
-import Greeting from '../blocks/Greeting';
+import Greeting from 'blocks/Greeting';
 
-import GIF from '../blocks/GIF';
-import Meme from '../blocks/Meme';
-import Joke from '../blocks/Joke';
-import Kargin from '../blocks/Kargin';
+import GIF from 'blocks/GIF';
+import Meme from 'blocks/Meme';
+import Joke from 'blocks/Joke';
+import Kargin from 'blocks/Kargin';
 
-import NotFound from '../blocks/NotFound';
+import NotFound from 'blocks/NotFound';
 
 const routes = [
   {

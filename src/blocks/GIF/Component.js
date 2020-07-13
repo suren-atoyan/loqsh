@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 
 import { Video, Button, ButtonGroup } from '@urban-bot/core';
 
-import Loading from '../../components/Loading';
-import useRandomGif from '../../hooks/useRandomGif';
-import { messages } from '../../config';
+import Loading from 'components/Loading';
+import useRandomGif from 'hooks/useRandomGif';
+import { messages } from 'config';
 
 function GIF() {
   const [gif, getGif] = useRandomGif(null);

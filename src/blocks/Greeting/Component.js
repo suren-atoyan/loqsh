@@ -2,9 +2,9 @@ import React from 'react';
 
 import { Text, Button, ButtonGroup } from '@urban-bot/core';
 
-import _routes from '../../routes';
-import { messages, greetingEmoji } from '../../config';
-import { pickRandom } from '../../utils';
+import _routes from 'routes';
+import { messages, greetingEmoji } from 'config';
+import { pickRandom } from 'utils';
 
 function Greeting() {
   // we don't do this out of the function

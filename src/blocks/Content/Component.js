@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Router, Route } from '@urban-bot/core';
-import routes from '../../routes';
+import routes from 'routes';
 
 function Content() {
   return (
