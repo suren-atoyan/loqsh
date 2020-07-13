@@ -7,19 +7,6 @@ dotenv.config();
 
 const { GIPHY_API_KEY, IMGUR_CLIENT_ID } = process.env;
 
-// The source (has been changed) is https://github.com/facebook/react/issues/5465#issuecomment-157888325
-
-const makeCancelable = promise => {
-  let hasCanceled_ = false;
-
-  const wrappedPromise = new Promise((resolve, reject) => {
-    promise.then(val => hasCanceled_ ? reject('operation is manually canceled') : setTimeout(_ => resolve(val), 1000));
-    promise.catch(reject);
-  });
-
-  return (wrappedPromise.cancel = _ => (hasCanceled_ = true), wrappedPromise);
-};
-
 const pickRandom = array => array[Math.round(Math.random() * array.length)];
 
 const getRandomGif = () => makeCancelable(
@@ -38,6 +25,31 @@ const getRandomJoke = () => makeCancelable(
 );
 
 const getRandomKargin = () => `https://www.youtube.com/watch?v=${pickRandom(kargin)}`;
+
+// The source (has been changed) of this utility is https://github.com/facebook/react/issues/5465#issuecomment-157888325
+
+const fireReject = reject => reject('operation is manually canceled');
+
+const makeCancelable = promise => {
+  let _reject = null;
+  let _hasCanceled = false;
+
+
+  const wrappedPromise = new Promise((resolve, reject) => {
+    _hasCanceled && fireReject(reject);
+    _reject = reject;
+
+    promise.then(resolve);
+    promise.catch(reject);
+  });
+
+  wrappedPromise.cancel = () => {
+    _hasCanceled = true;
+    reject && fireReject(reject);
+  };
+
+  return wrappedPromise;
+};
 
 export {
   pickRandom,

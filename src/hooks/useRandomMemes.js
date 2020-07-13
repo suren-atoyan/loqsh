@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import useCancelable from './useCancelable';
 import { getRandomMemes } from '../utils';
@@ -6,7 +6,9 @@ import { getRandomMemes } from '../utils';
 function useRandomMemes(initial) {
   const [memes, setMemes] = useState(initial);
 
-  useCancelable(getRandomMemes, memes => setMemes(memes.data));
+  const repeat = useCancelable(getRandomMemes, memes => setMemes(memes.data));
+
+  useEffect(repeat, []);
 
   return memes;
 }

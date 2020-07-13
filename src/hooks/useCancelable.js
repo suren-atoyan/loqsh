@@ -1,17 +1,19 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useCallback } from 'react';
 
 function useCancelable(getCancelable, fn) {
-  const [flag, repeat] = useState(true);
+  const ref = useRef(null);
 
-  useEffect(() => {
+  const repeat = useCallback(() => {
     const cancelable = getCancelable();
 
+    ref.current = cancelable;
+
     cancelable.then(fn).catch(console.error);
+  }, [getCancelable, fn]);
 
-    return cancelable.cancel;
-  }, [flag]);
+  useEffect(() => ref.current?.cancel, []);
 
-  return () => repeat(flag => !flag);
+  return repeat;
 }
 
 export default useCancelable;
