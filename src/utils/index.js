@@ -26,7 +26,7 @@ const getRandomJoke = () => makeCancelable(
 
 const getRandomKargin = () => `https://www.youtube.com/watch?v=${pickRandom(kargin)}`;
 
-// The source (has been changed) of this utility is https://github.com/facebook/react/issues/5465#issuecomment-157888325
+// The source (it has been changed) of this utility is https://github.com/facebook/react/issues/5465#issuecomment-157888325
 
 const fireReject = reject => reject('operation is manually canceled');
 

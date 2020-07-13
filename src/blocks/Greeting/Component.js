@@ -7,9 +7,9 @@ import { messages, greetingEmoji } from 'config';
 import { pickRandom } from 'utils';
 
 function Greeting() {
-  // we don't do this out of the function
-  // because of the strange build system of the environment
-  // it fails, because the imported staff becomes available after 🤷‍♂️
+  // the imported staff is somehow not available out of the function
+  // because of the strange build system of the environment 🤷‍♂️
+
   const routes = _routes.slice(2, _routes.length - 1); // cut the root and the "not found"
 
   return (
